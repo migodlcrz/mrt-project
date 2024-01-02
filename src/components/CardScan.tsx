@@ -14,16 +14,15 @@ const polylineCoordinates = [
 const CardScan: React.FC<CardScanProps> = ({ stationName, stationStatus }) => {
   const backgroundImageUrl = process.env.PUBLIC_URL + '/card-bg.webp';
 
-  // Determine the font color based on stationStatus
   const fontColor = stationStatus === 'IN' ? 'text-green-500' : stationStatus === 'OUT' ? 'text-red-500' : 'text-gray-300';
 
   return (
     <div className="h-screen flex flex-col lg:flex-row">
-      {/* Top half - Form */}
+      {/* left half - Form */}
       <div className={`py-10 px-20 flex flex-col justify-center items-center lg:w-1/2 lg:h-full border border-gray-300 shadow-md text-blue-400`} style={{ backgroundImage: `url(${backgroundImageUrl})`, backgroundSize: '300%', backgroundPosition: 'center' }}>
         <div className="flex items-center mb-2">
-          <label htmlFor="large-input" className="block text-1xl font-bold lg:text-3xl lg:font-bold text-gray-100 dark:text-white">
-            ENTER IC ID :  
+          <label htmlFor="large-input" className="block text-1xl font-bold lg:text-3xl lg:font-bold text-gray-100">
+            ENTER BEEP ID :  
           </label>
           <label htmlFor="additional-label" className={`block text-1xl font-bold lg:text-4xl lg:font-black ${fontColor} ml-2`}>
             {stationStatus}
@@ -39,7 +38,7 @@ const CardScan: React.FC<CardScanProps> = ({ stationName, stationStatus }) => {
         </label>
       </div>
 
-      {/* Bottom half - Map */}
+      {/* right half - Map */}
       <MapContainer
         className="h-1/2 w-full lg:w-1/2 lg:h-full"
         center={[14.6004, 121.0357 ]}
