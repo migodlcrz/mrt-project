@@ -1,5 +1,5 @@
 import React from 'react'
-import CardScan from '../../../components/CardScan';
+import CardScan from '../../../../components/CardScan';
 
 function QuezonaveOut() {
   return (
